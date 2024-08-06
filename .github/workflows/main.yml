@@ -14,8 +14,8 @@ jobs:
       - name: Docker Login
         uses: docker/login-action@v3
         with:
-          username: ${{secrets.USERGAVILLAR}}
-          password: ${{secrets.PASSWORD}}
+          run: echo "GitSafira123#" | docker login -u "gavillar" --password-stdin
+          
 
       - name: Build and push Docker images
         uses: docker/build-push-action@v6.5.0
