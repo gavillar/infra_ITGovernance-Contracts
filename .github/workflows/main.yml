@@ -24,8 +24,8 @@ jobs:
           context: .
           push: true
           tags: |
-            gavillar/first_image:v1
-            gavillar/fist_image:latest
+            ghcr.io/gavillar/application-spring:latest
+            ghcr.io/gavillar/application-spring:v1
             
           
         
