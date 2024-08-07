@@ -22,7 +22,6 @@ jobs:
         uses: docker/build-push-action@v6.5.0
         with:
           context: .
-          file: .
           push: true
           tags: |
             gavillar/first_image:v1
