@@ -7,34 +7,31 @@ services:
     container_name: itgov_contracts_nginx
     hostname: nginx
     restart: always
-    ports: [
-        "80:80"
-      ]
+    ports:
+      - "80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     networks:
       - itgov_contracts_network
 
   backend:
-      image: ghcr.io/gavillar/itgov_contracts_maven:v0.0.11
-      container_name: itgov_contracts_backend
-      hostname: itgov_contracts
-      restart: always
-      deploy:
-        resources:
-          limits:
-            cpus: '1'
-            memory: 500M
-          reservations:
-            cpus: '0.8'
-            memory: 200M
-      networks:
-      - itgov_contracts_network    
+    image: ghcr.io/gavillar/itgov_contracts_maven:v0.0.11
+    container_name: itgov_contracts_backend
+    hostname: itgov_contracts
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 500M
+        reservations:
+          cpus: '0.8'
+          memory: 200M
+    networks:
+      - itgov_contracts_network
+    ports:
+      - "9632"
 
-      ports: [
-        "9632"
-      ]
-
-  networks:
+networks:
   itgov_contracts_network:
     driver: bridge
