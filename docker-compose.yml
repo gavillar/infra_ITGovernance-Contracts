@@ -15,7 +15,7 @@ services:
       - itgov_contracts_network
 
   backend:
-    image: ghcr.io/gavillar/itgov-contracts-maven:v0.0.31
+    image: ghcr.io/gavillar/itgov-contracts-maven:v0.0.32
     container_name: itgov_contracts_backend
     hostname: itgov_contracts
     restart: always
