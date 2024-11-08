@@ -4,6 +4,9 @@ services:
 
   nginx:
     image: nginx:1.25.4
+    depends_on:
+      - backend
+      - db
     container_name: itgov_contracts_nginx
     hostname: nginx
     restart: always
@@ -17,6 +20,9 @@ services:
   backend:
     image: ghcr.io/gavillar/itgov-contracts-maven:v0.0.50
     container_name: itgov_contracts_backend
+    db:
+    image: mysql
+    
     hostname: itgov_contracts
     restart: always
     networks:
