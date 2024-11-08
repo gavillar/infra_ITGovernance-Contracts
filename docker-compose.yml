@@ -6,7 +6,7 @@ services:
     image: nginx:1.25.5
     container_name: itgov_contracts_nginx
     hostname: nginx
-    restart: always
+    restart: no:
     ports:
       - "80:80"
     volumes:
